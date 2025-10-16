@@ -9,6 +9,19 @@ LinkedList::~LinkedList() {
 void LinkedList::push_front(int v) { head_ = new Node(v, head_); }
 void LinkedList::remove_evens() {
     // TODO: implement
+    
+    Node* p = head_;
+    int* temp;
+    // tail->next = nullptr;
+    while (p->next != nullptr){
+        int cur = p->next->value;
+        if (cur % 2 = 0){
+            temp = &cur;
+            p->next = p->next->next;
+            *temp = nullptr;
+        }
+        p = p->next;
+    }
 }
 std::string LinkedList::to_string() const {
     std::ostringstream oss;
