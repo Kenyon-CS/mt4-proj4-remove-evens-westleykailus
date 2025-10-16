@@ -18,26 +18,8 @@ Makefile
 
 ## Your task
 1. Remove even-valued nodes at the head:
-   ```cpp
-   while (head_ && head_->value % 2 == 0) {
-     Node* tmp = head_;
-     head_ = head_->next;
-     delete tmp;
-   }
-   ```
 2. Sweep the remainder with a trailing pointer:
-   ```cpp
-   Node* p = head_;
-   while (p && p->next) {
-     if (p->next->value % 2 == 0) {
-       Node* dead = p->next;
-       p->next = dead->next;
-       delete dead;
-     } else {
-       p = p->next;
-     }
-   }
-   ```
+
 
 Expected after removal on the seeded list: `[1, 3, 5, 7]`.
 
